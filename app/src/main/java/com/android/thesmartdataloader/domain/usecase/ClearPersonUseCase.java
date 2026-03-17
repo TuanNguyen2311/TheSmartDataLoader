@@ -8,7 +8,7 @@ import javax.inject.Inject;
 public class ClearPersonUseCase {
     private final IPersonRepository personRepository;
     @Inject
-    public ClearPersonUseCase(@QualifierCore.MemoryRepo IPersonRepository personRepository) {
+    public ClearPersonUseCase(@QualifierCore.RoomRepo IPersonRepository personRepository) {
         this.personRepository = personRepository;
     }
 

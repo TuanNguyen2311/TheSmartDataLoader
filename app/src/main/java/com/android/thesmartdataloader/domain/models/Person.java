@@ -1,8 +1,14 @@
 package com.android.thesmartdataloader.domain.models;
 
 import androidx.annotation.NonNull;
+import androidx.room.Entity;
+import androidx.room.Ignore;
+import androidx.room.PrimaryKey;
 
+@Entity(tableName = "person")
 public class Person{
+    @PrimaryKey(autoGenerate = true)
+    private int id;
     private String name;
     private int age;
     private String email;
@@ -11,12 +17,14 @@ public class Person{
     private String address;
     private boolean isVip;
 
-
+    @Ignore
     public Person(Person person) {
-        this(person.name, person.age, person.email, person.phone, person.gender, person.address, person.isVip);
+        this(person.id, person.name, person.age, person.email, person.phone, person.gender, person.address, person.isVip);
     }
 
-    public Person(@NonNull String name, int age, @NonNull String email, @NonNull String phone, @NonNull String gender, @NonNull String address, boolean isVip) {
+
+    public Person(int id,@NonNull String name, int age, @NonNull String email, @NonNull String phone, @NonNull String gender, @NonNull String address, boolean isVip) {
+        this.id = id;
         this.name = name;
         this.age = age;
         this.email = email;
@@ -26,8 +34,19 @@ public class Person{
         this.isVip = isVip;
     }
 
+    @Ignore
     public Person(String name, int age, String gender, boolean isVip) {
-        this(name, age, "Hidden email", "Hidden phone", gender, "Hidden address", isVip);
+        this.name = name;
+        this.age = age;
+        this.email = "Hidden email";
+        this.phone = "Hidden phone";
+        this.gender = gender;
+        this.address = "Hidden address";
+        this.isVip = isVip;
+    }
+
+    public int getId() {
+        return id;
     }
 
     public String getName() {

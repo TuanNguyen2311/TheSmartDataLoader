@@ -43,4 +43,7 @@ dependencies {
 
     implementation libs.hilt
     annotationProcessor libs.hilt.compiler
+
+    implementation libs.room
+    annotationProcessor libs.room.compiler
 }

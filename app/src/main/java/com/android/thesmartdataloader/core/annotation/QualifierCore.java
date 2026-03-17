@@ -16,6 +16,10 @@ public class QualifierCore {
 
     @Qualifier
     @Retention(RetentionPolicy.RUNTIME)
+    public @interface RoomRepo {}
+
+    @Qualifier
+    @Retention(RetentionPolicy.RUNTIME)
     public @interface BackgroundTasks {}
 
     @Qualifier

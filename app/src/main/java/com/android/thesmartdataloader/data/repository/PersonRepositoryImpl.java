@@ -22,4 +22,9 @@ public class PersonRepositoryImpl implements IPersonRepository {
     public List<Person> getData() {
         return new ArrayList<>(persons);
     }
+
+    @Override
+    public void addAll(List<Person> values) {
+        persons.addAll(values);
+    }
 }

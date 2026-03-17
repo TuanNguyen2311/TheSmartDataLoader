@@ -25,4 +25,9 @@ public class JsonPersonRepositoryImpl implements IPersonRepository {
         debugLogger.log("Get persons by JsonPersonRepositoryImpl");
         return Collections.emptyList();
     }
+
+    @Override
+    public void addAll(List<Person> values) {
+        debugLogger.log("Add all person by JsonPersonRepositoryImpl");
+    }
 }
